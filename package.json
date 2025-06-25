@@ -1,0 +1,67 @@
+{
+  "name": "n8n-nodes-dynamic-node",
+  "version": "0.3.7",
+  "description": "A dynamic n8n node wrapper that can execute any node JSON by feeding it at runtime.",
+  "keywords": [
+    "n8n-community-node-package",
+    "n8n",
+    "node",
+    "n8n-node",
+    "dynamic-node"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/drowl87/n8n-nodes-dynamic-node.git",
+  "author": {
+    "name": "David Rowley",
+    "email": "david@mygenius.co"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drowl87/n8n-nodes-dynamic-node.git"
+  },
+  "engines": {
+    "node": ">=18.10"
+  },
+  "main": "index.js",
+  "scripts": {
+    "build":      "tsc && gulp build:icons",
+    "lint":       "eslint \"nodes/**/*.{ts,js}\" package.json",
+    "lint:fix":   "eslint \"nodes/**/*.{ts,js}\" package.json --fix",
+    "prepublishOnly": "npm run build && npm run lint"
+  },
+  "files": [
+    "dist"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "credentials": [],
+    "nodes": [
+      "dist/nodes/DynamicNode/DynamicNode.node.js"
+    ]
+  },
+  "devDependencies": {
+    "eslint": "^9.x",
+    "@eslint/js": "^9.x",
+    "@eslint/eslintrc": "^3.x",
+    "eslint-plugin-n8n-nodes-base": "^1.x",
+    "@typescript-eslint/parser": "^8.x",
+    "globals": "^16.x",
+    "typescript": "^5.x",
+    "gulp": "^5.x",
+    "prettier": "^3.x"
+  },
+  "dependencies": {
+    "n8n-workflow": "^1.90.0",
+    "uuid": "^11.1.0"
+  },
+  "peerDependencies": {
+    "n8n-workflow": "^1.90.0"
+  },
+  "bugs": {
+    "url": "https://github.com/drowl87/n8n-nodes-dynamic-node/issues"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  }
+}
